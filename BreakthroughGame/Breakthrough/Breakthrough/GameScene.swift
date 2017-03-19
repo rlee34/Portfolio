@@ -21,7 +21,7 @@ class GameScene: SKScene {
         leftBumper = self.childNode(withName: "leftFlipper") as! SKSpriteNode
         rightBumper = self.childNode(withName: "rightFlipper") as! SKSpriteNode
         
-        let border = SKPhysicsBody(edgeLoopFrom: self.frame)
+        let border = SKPhysicsBody(edgeLoopFrom: self.frame)        
         
         border.friction = 0
         border.restitution = 1
