@@ -12,6 +12,8 @@
 		2DA104531E7E038000F31FEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA104511E7E038000F31FEF /* Main.storyboard */; };
 		2DA104551E7E038000F31FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA104541E7E038000F31FEF /* Assets.xcassets */; };
 		2DA104581E7E038000F31FEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA104561E7E038000F31FEF /* LaunchScreen.storyboard */; };
+		2DA104601E7E0DCD00F31FEF /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1045F1E7E0DCD00F31FEF /* Recipe.swift */; };
+		2DA104621E7E1AA100F31FEF /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA104611E7E1AA100F31FEF /* AddRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2DA104541E7E038000F31FEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DA104571E7E038000F31FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DA104591E7E038000F31FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DA1045F1E7E0DCD00F31FEF /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		2DA104611E7E1AA100F31FEF /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				2DA1044D1E7E038000F31FEF /* AppDelegate.swift */,
 				2DA1044F1E7E038000F31FEF /* ViewController.swift */,
+				2DA104611E7E1AA100F31FEF /* AddRecipeViewController.swift */,
 				2DA104511E7E038000F31FEF /* Main.storyboard */,
 				2DA104541E7E038000F31FEF /* Assets.xcassets */,
 				2DA104561E7E038000F31FEF /* LaunchScreen.storyboard */,
 				2DA104591E7E038000F31FEF /* Info.plist */,
+				2DA1045F1E7E0DCD00F31FEF /* Recipe.swift */,
 			);
 			path = WhatsForDinner;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA104621E7E1AA100F31FEF /* AddRecipeViewController.swift in Sources */,
+				2DA104601E7E0DCD00F31FEF /* Recipe.swift in Sources */,
 				2DA104501E7E038000F31FEF /* ViewController.swift in Sources */,
 				2DA1044E1E7E038000F31FEF /* AppDelegate.swift in Sources */,
 			);
