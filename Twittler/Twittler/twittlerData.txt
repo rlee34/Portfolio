@@ -1,0 +1,18 @@
+{
+  "users": {
+    "shawndrost": [ 
+      "productively fought off a new form of cat #burningman",
+      "last night i built an entire potato but only I know how"
+      ],
+    "sharksforcheap": [
+      "nearly got my way of life"
+      ],
+    "mracus": [
+      "just deployed your koolaid #techlife"
+      ],
+    "douglascalhoun": [
+        "ask me how i developed this worm",
+        "completely got my belief system"
+      ]
+  }
+}

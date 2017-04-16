@@ -19,13 +19,10 @@ struct User {
     var tweets: [String]
 }
 
-func createUser(forUserName name: String) -> User {
+func createUser(forUserName name: String) {
     users.append(name)
-    return User.init(userName: name, tweets: [])
+    tweets.append(User.init(userName: name, tweets: ["a tweet"]))
 }
 
 var users: [String] = []
-var shawndrost = createUser(forUserName: "shawndrost")
-var sharksforcheap = createUser(forUserName: "sharksforcheap")
-var mracus = createUser(forUserName: "mracus")
-var douglascalhoun = createUser(forUserName: "douglasCalhoun")
+var tweets: [User] = []
