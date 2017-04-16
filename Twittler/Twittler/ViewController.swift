@@ -21,11 +21,14 @@ class ViewController: UIViewController {
                 if jsonObj != JSON.null {
                     print("jsonData:\(jsonObj["users"].count)")
                     for user in jsonObj["users"] {
-                        users.append(user.0)
+                        let username = user.0
+                        let tweets = jsonObj["users"][username].arrayValue.map { $0.stringValue }
                         
+                        // append username to users array.
+                        users.append(username)
+                        // loads existing tweets from txt file (JSON) and assigns them as values for each user.
+                        userTweets.updateValue(tweets, forKey: username)
                     }
-                    
-                    print(users)
                 } else {
                     print("Could not get json from file, make sure that file contains valid json.")
                 }

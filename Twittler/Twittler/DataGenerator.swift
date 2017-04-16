@@ -8,6 +8,9 @@
 
 import Foundation
 
+var users: [String] = []
+var userTweets: [String: [String]] = [:]
+
 struct Tweet {
     let user: String
     var message: String
@@ -19,10 +22,4 @@ struct User {
     var tweets: [String]
 }
 
-func createUser(forUserName name: String) {
-    users.append(name)
-    tweets.append(User.init(userName: name, tweets: ["a tweet"]))
-}
 
-var users: [String] = []
-var tweets: [User] = []
