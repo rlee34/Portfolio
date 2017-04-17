@@ -8,19 +8,14 @@
 
 import Foundation
 
-var users: [String] = []
-var userTweets: [String: [String]] = [:]
-
 struct Tweet {
     let user: String
     var message: String
     let createdAt: String
 }
 
-struct User {
-    let userName: String
-    var tweets: [String]
-}
+var users: [String] = []
+var tweets: [Tweet] = []
 
 //random tweet generator
 var opening = ["just", "", "", "", "", "ask me how I", "completely", "nearly", "productively", "efficiently", "last night I", "the president", "that wizard", "a ninja"]

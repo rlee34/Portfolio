@@ -21,12 +21,18 @@ class ViewController: UITableViewController {
                     
                     for user in jsonObj["users"] {
                         let username = user.0
-                        let tweets = jsonObj["users"][username].arrayValue.map { $0.stringValue }
+                        let userTweets = jsonObj["users"][username].arrayValue.map { $0.stringValue }
                         
                         // append username to users array.
                         users.append(username)
                         // loads existing tweets from txt file (JSON) and assigns them as values for each user.
-                        userTweets.updateValue(tweets, forKey: username)
+                        for tweet in userTweets {
+                            let date = Date()
+                            let formatter = DateFormatter()
+                            formatter.dateFormat = "MM-dd-yyyy h:mm"
+                            let tweet = Tweet(user: username, message: tweet, createdAt: formatter.string(from: date))
+                            tweets.append(tweet)
+                        }
                     }
                 } else {
                     print("Could not get json from file, make sure that file contains valid json.")
@@ -43,6 +49,20 @@ class ViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        var tweet: Tweet
+        tweet = tweets[indexPath.row]
+        cell.textLabel?.text = tweet.message
+        
+        return cell
     }
 
 }
