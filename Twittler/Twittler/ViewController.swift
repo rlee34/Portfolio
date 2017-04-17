@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         if let path = Bundle.main.path(forResource: "twittlerData", ofType: "txt") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-                    print("jsonData:\(jsonObj["users"].count)")
+                    
                     for user in jsonObj["users"] {
                         let username = user.0
                         let tweets = jsonObj["users"][username].arrayValue.map { $0.stringValue }
