@@ -28,10 +28,30 @@ func randomMessage() -> String {
     return [randomElement(fromArray: opening), randomElement(fromArray: verbs), randomElement(fromArray: objects), randomElement(fromArray: nouns), randomElement(fromArray: tags)].joined(separator: " ")
 }
 
+func generateRandomTweet() -> Tweet {
+    let user = randomElement(fromArray: users)
+    let message = randomMessage()
+    let createdAt = getDateTime()
+    let tweet = Tweet(user: user, message: message, createdAt: createdAt)
+    
+    return tweet
+}
+
 //helper functions
 func randomElement(fromArray array: [String]) -> String {
     let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
-    let result = array[randomIndex]
-    return result
+    let randomElement = array[randomIndex]
+    
+    return randomElement
 }
+
+func getDateTime() -> String {
+    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM-dd-yyyy h:mm"
+    let dateAndTime = formatter.string(from: date)
+    
+    return dateAndTime
+}
+
 
