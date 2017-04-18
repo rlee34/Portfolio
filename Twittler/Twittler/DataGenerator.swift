@@ -37,6 +37,10 @@ func generateRandomTweet() -> Tweet {
     return tweet
 }
 
+//tableView.beginUpdates()
+//tableView.insertRows(at: [IndexPath(row: yourArray.count-1, section: 0)], with: .automatic)
+//tableView.endUpdates()
+
 //helper functions
 func randomElement(fromArray array: [String]) -> String {
     let randomIndex = Int(arc4random_uniform(UInt32(array.count)))

@@ -56,11 +56,13 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TweetCell
         
         var tweet: Tweet
         tweet = tweets[indexPath.row]
-        cell.textLabel?.text = tweet.message
+        cell.usernameLabel?.text = tweet.user
+        cell.messageLabel?.text = tweet.message
+        cell.timeLabel?.text = tweet.createdAt
         
         return cell
     }
