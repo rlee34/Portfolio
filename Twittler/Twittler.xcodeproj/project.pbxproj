@@ -43,10 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D26B5C01EA5A35A000E16DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DAD43461EA2D05F00472DB5 /* Assets.xcassets */,
+				2DAD43531EA2FFD000472DB5 /* SwiftyJSON.swift */,
+				2DAD43481EA2D05F00472DB5 /* LaunchScreen.storyboard */,
+				2DAD434B1EA2D05F00472DB5 /* Info.plist */,
+				2DAD43551EA3040C00472DB5 /* twittlerData.txt */,
+			);
+			name = "Supporting Files";
+			path = Twittler;
+			sourceTree = "<group>";
+		};
 		2DAD43331EA2D05F00472DB5 = {
 			isa = PBXGroup;
 			children = (
 				2DAD433E1EA2D05F00472DB5 /* Twittler */,
+				2D26B5C01EA5A35A000E16DA /* Supporting Files */,
 				2DAD433D1EA2D05F00472DB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,13 +79,8 @@
 				2DAD433F1EA2D05F00472DB5 /* AppDelegate.swift */,
 				2DAD43411EA2D05F00472DB5 /* ViewController.swift */,
 				2DAD43511EA2E13B00472DB5 /* DataGenerator.swift */,
-				2DAD43551EA3040C00472DB5 /* twittlerData.txt */,
-				2DAD43431EA2D05F00472DB5 /* Main.storyboard */,
-				2DAD43461EA2D05F00472DB5 /* Assets.xcassets */,
-				2DAD43531EA2FFD000472DB5 /* SwiftyJSON.swift */,
-				2DAD43481EA2D05F00472DB5 /* LaunchScreen.storyboard */,
-				2DAD434B1EA2D05F00472DB5 /* Info.plist */,
 				2D26B5BE1EA58AFB000E16DA /* TweetCell.swift */,
+				2DAD43431EA2D05F00472DB5 /* Main.storyboard */,
 			);
 			path = Twittler;
 			sourceTree = "<group>";
