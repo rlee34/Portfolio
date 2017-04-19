@@ -23,9 +23,8 @@ class ViewController: UITableViewController {
                         let username = user.0
                         let userTweets = jsonObj["users"][username].arrayValue.map { $0.stringValue }
                         
-                        // append username to users array.
                         users.append(username)
-                        // loads existing tweets from txt file (JSON) and assigns them as values for each user.
+            
                         for tweet in userTweets {
                             let date = Date()
                             let formatter = DateFormatter()
@@ -43,12 +42,7 @@ class ViewController: UITableViewController {
         } else {
             print("Invalid filename/path.")
         }
-        
-//        let tweet = Tweet(user: "test", message: "testies", createdAt: "12-22-44 5:00")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [unowned self] in
-//            tweets.append(tweet)
-//            self.tableView.reloadData()
-//        }
+
         scheduleNextTweet()
     }
 
