@@ -44,7 +44,12 @@ class ViewController: UITableViewController {
             print("Invalid filename/path.")
         }
         
-        
+//        let tweet = Tweet(user: "test", message: "testies", createdAt: "12-22-44 5:00")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [unowned self] in
+//            tweets.append(tweet)
+//            self.tableView.reloadData()
+//        }
+        scheduleNextTweet()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +71,15 @@ class ViewController: UITableViewController {
         
         return cell
     }
-
+    
+    func scheduleNextTweet() {
+        let tweet = generateRandomTweet()
+        tweets.append(tweet)
+        tableView.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.scheduleNextTweet()
+        }
+    }
 }
 
