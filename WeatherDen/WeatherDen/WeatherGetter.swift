@@ -37,11 +37,8 @@ class WeatherGetter {
                 let long = coords.longitude
                 let requestURL = URL(string: "\(self.darkSkyRequestURL)\(self.darkSkyAPIKey)/\(lat),\(long)")!
                 self.getWeatherBy(url: requestURL)
-            
             }
         }
-        
-        
     }
     
     func getWeatherBy(url: URL) {

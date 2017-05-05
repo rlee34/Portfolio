@@ -9,7 +9,6 @@
 import Foundation
 
 struct Weather {
-    let city = ""
     let temperature: Int
     let cloudCover: Double
     let humidity: Double

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EeE-aY-xFN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xxc-rH-tQk">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherDen" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,19 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-cI-bmy">
-                                <rect key="frame" x="152.33333333333331" y="78" width="109.33333333333331" height="20.666666666666671"/>
+                                <rect key="frame" x="152.33333333333331" y="121.99999999999999" width="109.33333333333331" height="20.666666666666643"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-rm-uCc">
-                                <rect key="frame" x="140.66666666666669" y="114" width="131.66666666666669" height="84"/>
+                                <rect key="frame" x="140.66666666666669" y="158" width="131.66666666666669" height="84"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="70"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like 110°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yof-fQ-8zR">
-                                <rect key="frame" x="153.33333333333331" y="214" width="106.99999999999994" height="20.666666666666657"/>
+                                <rect key="frame" x="153.33333333333331" y="258" width="106.99999999999994" height="20.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Houston" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-Vn-ZRd">
-                                <rect key="frame" x="132.33333333333331" y="37" width="149.33333333333331" height="48"/>
+                                <rect key="frame" x="132.33333333333331" y="81" width="149.33333333333331" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.50689661835655953" green="0.50689661835655953" blue="0.50689661835655953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="BVO-cI-bmy" firstAttribute="top" secondItem="4MA-Vn-ZRd" secondAttribute="bottom" constant="-7" id="z2a-0k-fpz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hLz-At-c8k"/>
+                    <navigationItem key="navigationItem" id="B9b-gd-9Tm"/>
                     <connections>
                         <outlet property="cityLabel" destination="4MA-Vn-ZRd" id="rd8-d8-v2B"/>
                         <outlet property="temperatureLabel" destination="HdW-rm-uCc" id="wxt-Vd-F6h"/>
@@ -97,24 +97,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043.4782608695652" y="102.71739130434783"/>
+            <point key="canvasLocation" x="2857.971014492754" y="102.71739130434783"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kNO-EM-L0W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RkC-a8-dI4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hLz-At-c8k"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H5S-bq-FYO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ojZ-b7-a4Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ImW-9u-rQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950.7246376811595" y="102.71739130434783"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="lp8-2j-aMU">
+        <scene sceneID="b4B-dO-nZb">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EeE-aY-xFN" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xxc-rH-tQk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="uFV-UH-gA3">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="zzT-FX-kPf">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="x9J-hK-GXA"/>
+                        <segue destination="RkC-a8-dI4" kind="relationship" relationship="viewControllers" id="NIj-Lp-Kht"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0cW-is-Ikg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYO-4H-QBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="102.71739130434783"/>
+            <point key="canvasLocation" x="1043.4782608695652" y="102.71739130434783"/>
         </scene>
     </scenes>
     <resources>

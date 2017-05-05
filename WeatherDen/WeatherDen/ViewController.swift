@@ -8,20 +8,43 @@
 
 import UIKit
 
-class ViewController: UIViewController, WeatherGetterDelegate {
+class ViewController: UIViewController, WeatherGetterDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
     
+    
+    var searchController: UISearchController!
     var weatherGetter: WeatherGetter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        weatherGetter = WeatherGetter(delegate: self)
-        weatherGetter.getWeatherBy(city: "739 FM 3453 Trintiy, TX")
+        self.searchController = UISearchController(searchResultsController:  nil)
         
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        
+        self.navigationItem.titleView = searchController.searchBar
+        
+        self.definesPresentationContext = true
+        
+        weatherGetter = WeatherGetter(delegate: self)
+        //weatherGetter.getWeatherBy(city: "739 FM 3453 Trintiy, TX")
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("click: \(searchBar.text)")
     }
 
     override func didReceiveMemoryWarning() {
