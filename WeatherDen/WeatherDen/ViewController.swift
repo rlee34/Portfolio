@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let weatherGetter = WeatherGetter()
-        weatherGetter.getWeather()
+        weatherGetter.getWeatherBy(city: "Tampa, FL")
     }
 
     override func didReceiveMemoryWarning() {
