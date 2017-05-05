@@ -35,7 +35,6 @@ class ViewController: UIViewController, WeatherGetterDelegate, UISearchControlle
         self.definesPresentationContext = true
         
         weatherGetter = WeatherGetter(delegate: self)
-        //weatherGetter.getWeatherBy(city: "739 FM 3453 Trintiy, TX")
         
     }
     
@@ -44,7 +43,11 @@ class ViewController: UIViewController, WeatherGetterDelegate, UISearchControlle
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("click: \(searchBar.text)")
+        guard let location = searchBar.text else {
+            return
+        }
+        
+        weatherGetter.getWeatherBy(location: location)
     }
 
     override func didReceiveMemoryWarning() {

@@ -27,9 +27,9 @@ class WeatherGetter {
         self.delegate = delegate
     }
 
-    func getWeatherBy(city: String) {
+    func getWeatherBy(location: String) {
 
-        geocoder.geocodeAddressString(city) { placemarks, error in
+        geocoder.geocodeAddressString(location) { placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {
                 self.address = placemark.addressDictionary
                 let coords = location.coordinate
