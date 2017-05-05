@@ -21,11 +21,13 @@ class ViewController: UIViewController, WeatherGetterDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func didGetWeather() {
-        
+    func didGetWeather(weather: Weather) {
+        DispatchQueue.main.async {
+            
+        }
     }
     
-    func didNotGetWeather() {
+    func didNotGetWeather(error: Error) {
         
     }
     

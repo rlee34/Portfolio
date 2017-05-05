@@ -10,8 +10,8 @@ import CoreLocation
 import Foundation
 
 protocol WeatherGetterDelegate {
-    func didGetWeather()
-    func didNotGetWeather()
+    func didGetWeather(weather: Weather)
+    func didNotGetWeather(error: Error)
 }
 
 class WeatherGetter {
@@ -48,12 +48,13 @@ class WeatherGetter {
                     let weatherData = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
                     let weather = Weather(weatherData: weatherData)
                     
+                    self.delegate.didGetWeather(weather: weather)
                     print("Cloud cover: \(Int(weather.cloudCover * 100))")
                     print("Humidity: \(Int(weather.humidity * 100))")
                     print("Temp: \(weather.temperature)")
                     print("Wind: \(weather.windSpeed)")
                 } catch {
-                    print(error.localizedDescription)
+                    self.delegate.didNotGetWeather(error: error)
                 }
             }
         }
