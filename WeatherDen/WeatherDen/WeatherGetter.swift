@@ -21,6 +21,7 @@ class WeatherGetter {
     
     var geocoder = CLGeocoder()
     var delegate: WeatherGetterDelegate
+    var address: [AnyHashable: Any]?
     
     init(delegate: WeatherGetterDelegate) {
         self.delegate = delegate
@@ -30,13 +31,17 @@ class WeatherGetter {
 
         geocoder.geocodeAddressString(city) { placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {
+                self.address = placemark.addressDictionary
                 let coords = location.coordinate
                 let lat = coords.latitude
                 let long = coords.longitude
                 let requestURL = URL(string: "\(self.darkSkyRequestURL)\(self.darkSkyAPIKey)/\(lat),\(long)")!
                 self.getWeatherBy(url: requestURL)
+            
             }
         }
+        
+        
     }
     
     func getWeatherBy(url: URL) {
@@ -61,23 +66,6 @@ class WeatherGetter {
         
         dataTask.resume()
     }
-    
-//    func getCoordsFrom(city: String) {
-//        var lat: Float
-//        var long: String
-//        
-//        geocoder.geocodeAddressString(city) { placemarks, error in
-//            if let placemark = placemarks?.first {
-//                let location = placemark.location
-//                let coords = location?.coordinate
-//                lat = Float(coords?.latitude)
-//                long = coords?.longitude
-//                
-//            }
-//        }
-//        print(String(describing: lat))
-//                print(long ?? "error")
-//    }
     
     
 }
