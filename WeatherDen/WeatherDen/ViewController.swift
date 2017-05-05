@@ -8,19 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WeatherGetterDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let weatherGetter = WeatherGetter()
-        weatherGetter.getWeatherBy(city: "Tampa, FL")
+        let weatherGetter = WeatherGetter(delegate: self)
+        weatherGetter.getWeatherBy(city: "Houston, TX")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func didGetWeather() {
         
     }
+    
+    func didNotGetWeather() {
+        
+    }
+    
 
 
 }

@@ -9,36 +9,34 @@
 import CoreLocation
 import Foundation
 
+protocol WeatherGetterDelegate {
+    func didGetWeather()
+    func didNotGetWeather()
+}
+
 class WeatherGetter {
     
     private let darkSkyRequestURL = "https://api.darksky.net/forecast/"
     private let darkSkyAPIKey = "b3a6a5968633f510815f2cc043fdb2d7"
     
     var geocoder = CLGeocoder()
+    var delegate: WeatherGetterDelegate
     
-    
-    
-    
-    
+    init(delegate: WeatherGetterDelegate) {
+        self.delegate = delegate
+    }
+
     func getWeatherBy(city: String) {
-        
+
         geocoder.geocodeAddressString(city) { placemarks, error in
-            if let placemark = placemarks?.first {
-                let location = placemark.location
-                let coords = location?.coordinate
-                if let lat = coords?.latitude, let long = coords?.longitude {
-                    let requestURL = URL(string: "https://api.darksky.net/forecast/b3a6a5968633f510815f2cc043fdb2d7/\(lat),\(long)")!
-                    self.getWeatherBy(url: requestURL)
-                }
-   
-                
-                
-                
+            if let placemark = placemarks?.first, let location = placemark.location {
+                let coords = location.coordinate
+                let lat = coords.latitude
+                let long = coords.longitude
+                let requestURL = URL(string: "\(self.darkSkyRequestURL)\(self.darkSkyAPIKey)/\(lat),\(long)")!
+                self.getWeatherBy(url: requestURL)
             }
         }
-        //let requestURL = URL(string: "https://api.darksky.net/forecast/b3a6a5968633f510815f2cc043fdb2d7/37.279518,-121.867905")!
-        //getWeatherBy(url: requestURL)
-        
     }
     
     func getWeatherBy(url: URL) {
