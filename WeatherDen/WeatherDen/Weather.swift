@@ -10,6 +10,8 @@ import Foundation
 
 struct Weather {
     let temperature: Int
+    let apparentTemperature: Int
+    let summaryLabel: String
     let cloudCover: Double
     let humidity: Double
     let windSpeed: Int
@@ -20,5 +22,7 @@ struct Weather {
         self.cloudCover = currentWeatherDict["cloudCover"] as! Double
         self.humidity = currentWeatherDict["humidity"] as! Double
         self.windSpeed = currentWeatherDict["windSpeed"] as! Int
+        self.apparentTemperature = currentWeatherDict["apparentTemperature"] as! Int
+        self.summaryLabel = currentWeatherDict["summary"] as! String
     }
 }

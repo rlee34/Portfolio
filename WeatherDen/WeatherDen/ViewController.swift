@@ -57,11 +57,16 @@ class ViewController: UIViewController, WeatherGetterDelegate, UISearchControlle
 
     func didGetWeather(weather: Weather) {
         DispatchQueue.main.async {
-            self.temperatureLabel.text = String(weather.temperature)
-            
             if let city = self.weatherGetter.address?["City"] {
                 self.cityLabel.text = city as? String
             }
+            
+            self.temperatureLabel.text = String(weather.temperature)
+            self.apparentTemperatureLabel.text = String("Feels like \(weather.apparentTemperature)")
+            self.summaryLabel.text = weather.summaryLabel
+            self.windSpeedLabel.text = String("\(weather.windSpeed) mph")
+            self.humidityLabel.text = String("\(Int(weather.humidity * 100))%")
+            self.cloudCoverLabel.text = String("\(Int(weather.cloudCover * 100))%")
         }
     }
     
